@@ -1,0 +1,41 @@
+draw.py:
+	python3 draw.py file_with_numbers.txt result_file_with_graph.png
+	drawing graph from numbers with floating point divided by newline
+	first line zero-th number
+	second line first number
+	...
+	...
+	n-th line (n-1)-th number
+
+kolmogorov_diff:
+	python3 kolmogorov_diff.py first.txt second.txt result.png
+	calculating kolmogorov difference between two files with numbers
+	and ploting two curves in the same plot for comparison 
+
+run.sh:
+	run.sh mPhaseImitation.bin N_random_14bit_numbers test.csv
+	mPhaseImitation.bin you can get by compiling this repository
+		https://github.com/KimalIsaev/mPhaseImitation
+	it generates 3 files:
+		1) file with random numbers in rng_files\
+		2) file with orbit time distribution in results\
+		3) file with plot of orbit time distribution in pictures\
+	test.csv file with multiple lines of parameters for queue system
+		N_device X_flow X_orbit Q_R0 Q_R1 Q_phases X_phases
+	N_devices: amount of devices in system
+	X_flow: intensity of puasson flow. which generating input request
+	X_orbit: intensity of one request in orbit
+	Q_R0: probability to exit system after device executed request  
+	Q_R0: probability to be executed again
+		after device executed request already once
+	Q_R2 = 1-(Q_R1+Q_R2):  probability to orbit 
+		after device executed request
+	Q_phases: multiple non-negative values, 
+		sum of which must be equal to one,
+		defines probability to use phase with same index
+	X_phases: multiple positive values,
+		defines intensity of phase with same index
+
+-----------------------------------------------------------------------------
+
+
