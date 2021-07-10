@@ -1,6 +1,5 @@
 *.exe
 !README.txt
-*.csv
 *.txt
 *.png
 *..core
