@@ -19,7 +19,7 @@ kolmogorov_diff:
 	format of files same that used by draw.py
 
 run.sh:
-	run.sh mPhaseImitation.bin N_random_14bit_numbers test.csv
+	run.sh mPhaseImitation.bin N_random_14byte_numbers test.csv
 	mPhaseImitation.bin you can get by compiling this repository
 		https://github.com/KimalIsaev/mPhaseImitation
 	it generates 3 files:
