@@ -1,3 +1,8 @@
+warning:
+	the main script (run.sh) working only with UNIX-like OSes
+	scripts draw.py and kolmogorov_diff.py works everywhere,
+	where python > 3.5 works
+
 draw.py:
 	python3 draw.py file_with_numbers.txt result_file_with_graph.png
 	drawing graph from numbers with floating point divided by newline
@@ -11,6 +16,7 @@ kolmogorov_diff:
 	python3 kolmogorov_diff.py first.txt second.txt result.png
 	calculating kolmogorov difference between two files with numbers
 	and ploting two curves in the same plot for comparison 
+	format of files same that used by draw.py
 
 run.sh:
 	run.sh mPhaseImitation.bin N_random_14bit_numbers test.csv
@@ -20,22 +26,27 @@ run.sh:
 		1) file with random numbers in rng_files\
 		2) file with orbit time distribution in results\
 		3) file with plot of orbit time distribution in pictures\
-	test.csv file with multiple lines of parameters for queue system
+	test.csv file with multiple lines of parameters 
+	for different queue system, one line is for one queue system
+	and consist of this parameters in this order:
 		N_device X_flow X_orbit Q_R0 Q_R1 Q_phases X_phases
 	N_devices: amount of devices in system
 	X_flow: intensity of puasson flow. which generating input request
 	X_orbit: intensity of one request in orbit
 	Q_R0: probability to exit system after device executed request  
 	Q_R0: probability to be executed again
-		after device executed request already once
+		after device executed request already 
 	Q_R2 = 1-(Q_R1+Q_R2):  probability to orbit 
 		after device executed request
 	Q_phases: multiple non-negative values, 
 		sum of which must be equal to one,
 		defines probability to use phase with same index
-	X_phases: multiple positive values,
+	X_phases: multiple positive values
+		(same number of values as Q-phases had),
 		defines intensity of phase with same index
 
+my standart use of this scripts:
+	./run.sh ./mPhaseImitation.exe 2000 tests/first.csv
+	xv pictures/outputed_file.png
+
 -----------------------------------------------------------------------------
-
-
