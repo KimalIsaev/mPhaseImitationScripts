@@ -1,4 +1,4 @@
-parent_dir=$(dirname $1)
+parent_dir=$(dirname $0)
 rng_files_dir=$parent_dir/rng_files
 results_dir=$parent_dir/results
 pictures_dir=$parent_dir/pictures
