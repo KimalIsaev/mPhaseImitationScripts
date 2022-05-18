@@ -14,6 +14,6 @@ do
 	flow_count=$(echo -n $err_output | tr -d \n) 
 	true_name=$(basename $3 .csv)'_'$i'_'$flow_count'_'$time
 	mv $results_dir/$temp_name.txt $results_dir/$true_name.txt
-    python3 draw.py $results_dir/$true_name.txt $pictures_dir/$true_name.png
+	python3 draw.py $results_dir/$true_name.txt $pictures_dir/$true_name.png
 	export i=$(($i+1))
 done < $3
