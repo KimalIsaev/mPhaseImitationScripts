@@ -9,6 +9,9 @@ time=$(date +"%d:%m:%Y_%H:%M:%S")
 i=0
 while read line
 do
+    if [$line = ""]; then
+        exit 0
+    fi;
 	temp_name=$(basename $4 .csv)'_'$i'_'$time
 	dd if=/dev/random of=$rng_files_dir/$temp_name.raw bs=14 count=$3 status='none'
 	err_output=$($1 $rng_files_dir/$temp_name.raw $line 2>&1 > $results_dir/$temp_name.txt)
@@ -17,5 +20,5 @@ do
 	mv $results_dir/$temp_name.txt $results_dir/$true_name.txt
 	python3 $2 $results_dir/$true_name.txt $pictures_dir/$true_name.png
 	export i=$(($i+1))
-    echo $true_name
+	echo $true_name
 done < $4
