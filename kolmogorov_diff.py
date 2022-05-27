@@ -29,8 +29,8 @@ numbers2 = normalize(min_numbers2 + [0]*(max_length - len(min_numbers2) + 1))
 print(kolmogorov(numbers1, numbers2))
 
 
-plt.plot(numbers1, linestyle = '--', label='P2(i)')
 plt.plot(numbers2, label='P(i)')
+plt.plot(numbers1, linestyle = '--', label='P2(i)')
 plt.xlabel('i')
 plt.ylabel('P2(i), P(i)')
 plt.legend()
