@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import sys
 
-def cosec_sum(l):
+def consec_sum(l):
     return list(map(sum, list(reversed([list(reversed(list(islice(list(reversed(l)), x, None)))) for x in range(len(l))]))))
 
 def filename_to_numbers(name):
