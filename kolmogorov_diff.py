@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from pathlib import Path
+from itertools import islice
 import sys
 
 def consec_sum(l):
