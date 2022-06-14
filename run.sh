@@ -20,7 +20,7 @@ do
     fi;
 	temp_name=$(basename $test_file .csv)'_'$i'_'$time
 	dd if=/dev/random of=$rng_files_dir/$temp_name.raw \
-        bs=21 count=$number_of_randoms status='none'
+        bs=35 count=$number_of_randoms status='none'
 	err_output=$($imitation_exe $rng_files_dir/$temp_name.raw $sigma $line 2>&1 > $results_dir/$temp_name.txt)
 	flow_count=$(echo -n $err_output | tr -d \n) 
 	true_name=$(basename $test_file .csv)'_'$i'_'$flow_count'_'$time
